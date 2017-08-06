@@ -32,5 +32,25 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="lib/tiles-api-3.0.7.jar"/>
+	<classpathentry kind="lib" path="lib/tiles-autotag-core-runtime-1.2.jar"/>
+	<classpathentry kind="lib" path="lib/tiles-compat-3.0.7.jar"/>
+	<classpathentry kind="lib" path="lib/tiles-core-3.0.7.jar"/>
+	<classpathentry kind="lib" path="lib/tiles-el-3.0.7.jar"/>
+	<classpathentry kind="lib" path="lib/tiles-extras-3.0.7.jar"/>
+	<classpathentry kind="lib" path="lib/tiles-freemarker-3.0.7.jar"/>
+	<classpathentry kind="lib" path="lib/tiles-jsp-3.0.7.jar"/>
+	<classpathentry kind="lib" path="lib/tiles-mvel-3.0.7.jar"/>
+	<classpathentry kind="lib" path="lib/tiles-ognl-3.0.7.jar"/>
+	<classpathentry kind="lib" path="lib/tiles-request-api-1.0.6.jar"/>
+	<classpathentry kind="lib" path="lib/tiles-request-freemarker-1.0.6.jar"/>
+	<classpathentry kind="lib" path="lib/tiles-request-jsp-1.0.6.jar"/>
+	<classpathentry kind="lib" path="lib/tiles-request-mustache-1.0.6.jar"/>
+	<classpathentry kind="lib" path="lib/tiles-request-servlet-1.0.6.jar"/>
+	<classpathentry kind="lib" path="lib/tiles-request-servlet-wildcard-1.0.6.jar"/>
+	<classpathentry kind="lib" path="lib/tiles-request-velocity-1.0.6.jar"/>
+	<classpathentry kind="lib" path="lib/tiles-servlet-3.0.7.jar"/>
+	<classpathentry kind="lib" path="lib/tiles-template-3.0.7.jar"/>
+	<classpathentry kind="lib" path="lib/tiles-velocity-3.0.7.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

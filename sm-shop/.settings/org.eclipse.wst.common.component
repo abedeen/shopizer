@@ -4,9 +4,6 @@
         <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
-        <dependent-module archiveName="sm-core-2.0.5-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/sm-core/sm-core">
-            <dependency-type>uses</dependency-type>
-        </dependent-module>
         <dependent-module archiveName="sm-core-modules-2.0.5-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/sm-core-modules/sm-core-modules">
             <dependency-type>uses</dependency-type>
         </dependent-module>
