@@ -40,7 +40,7 @@ $(document).ready(function() {
 			//log('Search string : ' + searchQuery);
 			var uri = '<c:url value="/shop/search/search.html"/>?q=' + q;
             var res = encodeURI(uri);
-			e.preventDefault();//action url will be overriden
+		//	e.preventDefault();//action url will be overriden
 	        $('#hiddenSearchForm').attr('action',res).submit();
    });
 
