@@ -18,7 +18,7 @@ public class MerchantConfig implements Serializable, JSONAware {
 	 */
 	
 	private static final long serialVersionUID = 1L;
-	private boolean displayCustomerSection =false;
+	private boolean displayCustomerSection =true;
 	private boolean displayContactUs =false;
 	private boolean displayStoreAddress = false;
 	private boolean displayAddToCartOnFeaturedItems = false;

@@ -289,6 +289,7 @@ $(document).ready(function() {
                                         </div> 
                                         </c:if>                                       
                                         <!-- Customer account menu populated by JS -->
+                                         <div class="btn-group dropdown" id="customerAccount"></div>
                                         <c:if test="${requestScope.CONFIGS['displayCustomerSection'] == true}">
                                         <div class="btn-group dropdown" id="customerAccount"></div>
                                         </c:if>

@@ -3,7 +3,7 @@
 
 	$(function(){
 		log('Check for customer account');
-		if(supportsCustomerLogin()) {
+		if(!supportsCustomerLogin()) {
 			if($('#customerNotLoggedInAccountTemplate')) {
 				var customerNotLoggedInTemplate = Hogan.compile(document.getElementById("customerNotLoggedInAccountTemplate").innerHTML);
 				var customerNotLoggedInRendered = customerNotLoggedInTemplate.render('');

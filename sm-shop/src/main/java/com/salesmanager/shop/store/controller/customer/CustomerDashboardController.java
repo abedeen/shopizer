@@ -46,7 +46,7 @@ public class CustomerDashboardController extends AbstractController {
 	private CustomerOptionSetService customerOptionSetService;
 	
 	
-	@PreAuthorize("hasRole('AUTH_CUSTOMER')")
+	//@PreAuthorize("hasRole('AUTH_CUSTOMER')")
 	@RequestMapping(value="/dashboard.html", method=RequestMethod.GET)
 	public String displayCustomerDashboard(Model model, HttpServletRequest request, HttpServletResponse response) throws Exception {
 		
