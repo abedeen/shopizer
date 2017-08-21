@@ -83,16 +83,14 @@
         <dependency>
             <groupId>org.apache.tiles</groupId>
             <artifactId>tiles-jsp</artifactId>
-            <version>3.0.4</version>
-            <exclusions>
+            <version>3.0.5</version>
+            <!-- exclusions>
                 <exclusion>
                     <groupId>javax.servlet</groupId>
                     <artifactId>servlet-api</artifactId>
                 </exclusion>
-            </exclusions>
+            </exclusions-->
         </dependency>
-
-
         <!-- H2 session -->
         <dependency>
 			<groupId>com.h2database</groupId>
