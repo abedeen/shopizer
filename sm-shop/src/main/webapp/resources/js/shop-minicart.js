@@ -158,9 +158,9 @@
 			    	 log('Error while adding to cart ' + cart.message);
 			     }
 				 
-			     cleanupMiniCart();
-			     miniCartSummary(cart);
-			     fullCart(cart);
+			   //  cleanupMiniCart();
+			//     miniCartSummary(cart);
+			//     fullCart(cart);
 
 				 $('#pageContainer').hideLoading();
 			 } 
@@ -278,8 +278,8 @@ function removeItemFromMinicart(lineItemId){
 		 },
 		 success: function(miniCart) {
 			 
-			 	miniCartSummary(miniCart);
-			    fullCart(miniCart);
+			 //	miniCartSummary(miniCart);
+			 //   fullCart(miniCart);
 
 		} 
 	});
@@ -319,10 +319,10 @@ function miniCartSummary(cart) {
 
 function fullCart(cart) {
 
-    var miniCartTemplate = Hogan.compile(document.getElementById("miniCartTemplate").innerHTML);
-    var miniCartRendered = miniCartTemplate.render(cart);
+ //   var miniCartTemplate = Hogan.compile(document.getElementById("miniCartTemplate").innerHTML);
+  //  var miniCartRendered = miniCartTemplate.render(cart);
     //log(miniCartRendered);
-    $('#miniCartDetails').html(miniCartRendered);
+//    $('#miniCartDetails').html(miniCartRendered);
 	
 }
 
@@ -346,7 +346,7 @@ function emptyCartObject() {
 /** returns the cart code **/
 function getCartCode() {
 	
-	var cart = $.cookie('cart'); //should be [storecode_cartid]
+	var cart = Cookies.get('cart'); //should be [storecode_cartid]
 	var code = new Array();
 	
 	if(cart!=null) {

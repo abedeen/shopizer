@@ -31,7 +31,55 @@ response.setDateHeader ("Expires", -1);
 
     <!-- Page Content -->
     <div class="container">
+			    <!-- START-->
+<link rel="stylesheet" href="http://localhost:8080/static/files/DEFAULT/owl.carousel.min.css">
+<link rel="stylesheet" href="http://localhost:8080/static/files/DEFAULT/owl.theme.default.min.css">
+<link rel="stylesheet" href="http://localhost:8080/static/files/DEFAULT/custom.css">
+<script type="text/html" id="sliderBoxTemplate">
+{{#products}}
+    <div class="carousel-item ">
+                            <img class="d-block img-fluid1"  class="height:320px" src="http://localhost:8080/{{image.imageUrl}}">
+                        </div>
 
+{{/products}}
+</script>
+
+<h2 class="hTitle">New items</h2>
+<br/>
+
+		  <script>
+	       $(document).ready(function() {
+
+				//get products
+				loadSliderProducts();
+          })
+		  
+		 
+		  
+		  
+		  function loadSliderProducts() {
+		  	$.ajax({
+				type: 'GET',
+				dataType: "json",
+				url: 'http://localhost:8080/services/public/DEFAULT/products/group/custom',
+				success: function(productList) {
+
+					//set in slider
+					var productsTemplate = Hogan.compile(document.getElementById("sliderBoxTemplate").innerHTML);
+					var productsRendred = productsTemplate.render(productList);
+					//productsRendred=productsRendred.replace(/<div class="carousel-item ">/g, ' <div class="carousel-item active">');
+					$('#sliderContainer').append(productsRendred);
+				//	loadSlider();
+
+				},
+				error: function(jqXHR,textStatus,errorThrown) { 
+					$(divProductsContainer).hideLoading();
+					alert('Error ' + jqXHR + "-" + textStatus + "-" + errorThrown);
+				}
+			});
+		  }
+          </script>
+		  <!--- END -->
         <div class="row">
 
             <div class="col-lg-3">
@@ -48,22 +96,17 @@ response.setDateHeader ("Expires", -1);
 
             <div class="col-lg-9">
 
-                <div id="carouselExampleIndicators" class="carousel slide my-4" data-ride="carousel">
-                    <ol class="carousel-indicators">
+                <div id="carouselExampleIndicators" class="carousel slide my-4" data-ride="carousel"  class="height:320px" >
+                    <ol class="carousel-indicators"  class="height:320px" >
                         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                         <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
                         <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
                     </ol>
-                    <div class="carousel-inner" role="listbox">
+                    <div class="carousel-inner" role="listbox" id="sliderContainer"  class="height:320px" >
                         <div class="carousel-item active">
-                            <img class="d-block img-fluid" src="http://placehold.it/900x350" alt="First slide">
+                            <img class="d-block img-fluid1" src="http://placehold.it/900x350" alt="First slide">
                         </div>
-                        <div class="carousel-item">
-                            <img class="d-block img-fluid" src="http://placehold.it/900x350" alt="Second slide">
-                        </div>
-                        <div class="carousel-item">
-                            <img class="d-block img-fluid" src="http://placehold.it/900x350" alt="Third slide">
-                        </div>
+                       
                     </div>
                     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -172,6 +215,8 @@ response.setDateHeader ("Expires", -1);
 
     </div>
     <!-- /.container -->
+    
+    <jsp:include page="/pages/shop/templates/exoticamobilia1/sections/jsLinks.jsp" />
 <tiles:insertAttribute name="footer" ignore="true"/>
 
 </body>
