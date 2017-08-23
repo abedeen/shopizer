@@ -220,6 +220,19 @@ response.setDateHeader ("Expires", -1);
 <tiles:insertAttribute name="footer" ignore="true"/>
 
 </body>
+<script>
+  window.onscroll = changePos;
 
+function changePos() {
+    
+    
+    if (window.pageYOffset > 70) {
+       $("#header").addClass( "fixed-top" );  
+    } else {
+    $("#header").removeClass( "fixed-top" );
+       
+    }
+}
+  </script>
 </html>
  

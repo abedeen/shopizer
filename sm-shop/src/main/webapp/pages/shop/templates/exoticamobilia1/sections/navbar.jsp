@@ -45,7 +45,7 @@ docs.css:878
 }
 </style>
  <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <nav id="header" class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="#">
 										<sm:pageContent contentCode="logo"/>
 									</a>
