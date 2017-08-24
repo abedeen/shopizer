@@ -20,7 +20,6 @@ response.setDateHeader ("Expires", -1);
 <%@page pageEncoding="UTF-8"%>
 <style>
 @media (min-width: 768px)
-docs.css:915
 .bs-example {
     margin-right: 0;
     margin-left: 0;
@@ -32,7 +31,6 @@ docs.css:915
     box-shadow: none;
 }
 
-docs.css:878
 .bs-example {
     position: relative;
     padding: 45px 15px 15px;
@@ -53,14 +51,14 @@ docs.css:878
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav ml-auto">
+            <ul class="navbar-nav ">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link " style="font-size: 25px;" href="#">HOME <span class="sr-only">(current)</span></a>
                 </li>
                 <c:set var="code" value="${category.code}"/>
 							<c:forEach items="${requestScope.TOP_CATEGORIES}" var="category">							
 				
-                <li class="nav-item">
+                <li class="nav-item " style="font-size: 25px;">
 				<a class="nav-link"  data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"href="<c:url value="/shop/category/${category.description.friendlyUrl}.html"/><span class="nav-link">${category.description.name}</span></a>
 				<c:if test="${fn:length(category.children)>0}">
 													<ul class="dropdown-menu">

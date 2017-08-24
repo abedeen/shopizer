@@ -25,7 +25,7 @@ response.setDateHeader ("Expires", -1);
 <html lang="en">
 <tiles:insertAttribute name="header" ignore="true"/>
 
-<body>
+<body class="bg">
 
   <tiles:insertAttribute name="navbar" ignore="true"/>
 
@@ -226,7 +226,7 @@ response.setDateHeader ("Expires", -1);
 function changePos() {
     
     
-    if (window.pageYOffset > 70) {
+    if (window.pageYOffset > 210) {
        $("#header").addClass( "fixed-top" );  
     } else {
     $("#header").removeClass( "fixed-top" );
