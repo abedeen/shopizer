@@ -15,34 +15,6 @@ response.setDateHeader ("Expires", -1);
 <%@page pageEncoding="UTF-8"%>
 
 
- <div id="shop" class="">
- 
-       <div style="margin-top: 0px;" class="banner center-block">
-
-	       	<c:if test="${requestScope.CONTENT['banner']!=null}">
-				<sm:pageContent contentCode="banner"/>
-			</c:if>
-
-       </div>
-
-
-</div>
-				
-			    <c:if test="${requestScope.CONTENT['homeMessage']!=null}">
-			    <sm:pageContent contentCode="homeMessage"/>
-		        </c:if>
-
-        							
-
-<div class="main">
-			<c:if test="${page!=null}">
-				<div id="" class="container">
-	          			    <c:out value="${page.description}" escapeXml="false"/>
-				</div>
-			</c:if>
-
-			
-			<br/>
 			<sm:shopProductGroup groupName="FEATURED_ITEM"/>
 			<sm:shopProductGroup groupName="SPECIALS"/>
 			
@@ -65,10 +37,4 @@ response.setDateHeader ("Expires", -1);
 			</c:if>
 			</div>
 			
-			<div class="container">
-				
-			</div>
-		
-		
-</div>
-</div>
+			
