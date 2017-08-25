@@ -82,19 +82,7 @@ response.setDateHeader ("Expires", -1);
 		  <!--- END -->
         <div class="row">
 
-            <!--div class="col-lg-3">
-
-                <h1 class="my-4">Shop Name</h1>
-                <div class="list-group">
-                    <a href="#" class="list-group-item">Category 1</a>
-                    <a href="#" class="list-group-item">Category 2</a>
-                    <a href="#" class="list-group-item">Category 3<i class="fa  fa-download"></i></a>
-                </div>
-
-            </div-->
-            <!-- /.col-lg-3 -->
-
-            <div class="col-lg-11">
+            <div class="col-lg-9">
 
                 <div id="carouselExampleIndicators" class="carousel slide my-4" data-ride="carousel"  class="height:320px" >
                     <ol class="carousel-indicators"  class="height:320px" >
@@ -117,64 +105,26 @@ response.setDateHeader ("Expires", -1);
                         <span class="sr-only">Next</span>
                     </a>
                 </div>
+                </div>
+                <div class="row">
+            <div class="col-lg-3">
+
+                <h1 class="my-4">Shop Name</h1>
+                <div class="list-group">
+                    <a href="#" class="list-group-item">Category 1</a>
+                    <a href="#" class="list-group-item">Category 2</a>
+                    <a href="#" class="list-group-item">Category 3<i class="fa  fa-download"></i></a>
+                </div>
+
+            </div>
+            <!-- /.col-lg-3 -->
+
+            <div class="col-lg-9">
+              
 
                 <div class="row">
 
-                    <div class="col-lg-4 col-md-6 mb-4">
-                        <div class="card h-100">
-                            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-                            <div class="card-body">
-                                <h4 class="card-title"><a href="#">Item One</a></h4>
-                                <h5>$24.99</h5>
-                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
-                            </div>
-                            <div class="card-footer">
-                                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 mb-4">
-                        <div class="card h-100">
-                            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-                            <div class="card-body">
-                                <h4 class="card-title"><a href="#">Item Two</a></h4>
-                                <h5>$24.99</h5>
-                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur! Lorem ipsum dolor sit amet.</p>
-                            </div>
-                            <div class="card-footer">
-                                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 mb-4">
-                        <div class="card h-100">
-                            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-                            <div class="card-body">
-                                <h4 class="card-title"><a href="#">Item Three</a></h4>
-                                <h5>$24.99</h5>
-                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
-                            </div>
-                            <div class="card-footer">
-                                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 mb-4">
-                        <div class="card h-100">
-                            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-                            <div class="card-body">
-                                <h4 class="card-title"><a href="#">Item Four</a></h4>
-                                <h5>$24.99</h5>
-                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
-                            </div>
-                            <div class="card-footer">
-                                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-                            </div>
-                        </div>
-                    </div>
+                 
 
                     <div class="col-lg-4 col-md-6 mb-4">
                         <div class="card h-100">
@@ -192,14 +142,10 @@ response.setDateHeader ("Expires", -1);
 
                     <div class="col-lg-4 col-md-6 mb-4">
                         <div class="card h-100">
-                            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-                            <div class="card-body">
-                                <h4 class="card-title"><a href="#">Item Six</a></h4>
-                                <h5>$24.99</h5>
-                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
-                            </div>
-                            <div class="card-footer">
-                                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+                           <div class="card-body">
+                           </div>
+                            <div class="card-footer1">
+                              <button type="submit" name="addtocart" class="addtocart-button" title="Add to Cart"><img class="btn-img-checkout" src="/resources/img/btn-icon.png"/>&nbsp;ADD TO CART</button>
                             </div>
                         </div>
                     </div>
@@ -220,6 +166,37 @@ response.setDateHeader ("Expires", -1);
 <tiles:insertAttribute name="footer" ignore="true"/>
 
 </body>
+<style>
+.h-100
+{
+padding:19px;
+}
+.addtocart-button:hover {
+    color: rgb(255, 255, 255);
+    background: rgb(65, 65, 65);
+}
+.addtocart-button {
+    width: 100%;
+    height:58px;
+    background-color:#0A8452;
+    font-size: 20px;
+    line-height: 22px;
+    color: rgb(255, 255, 255);
+    text-transform: uppercase;
+    border-radius: 0px;
+    border-width: initial;
+    border-style: none;
+    border-color: initial;
+    border-image: initial;
+    padding: 9px 12px 10px;
+    transition: all 0.2s ease-in;
+}
+.btn-img-checkout{
+    margin-top: -3px;
+    margin-right: 8px;
+    margin-left: -8px;
+    }
+</style>
 <script>
   window.onscroll = changePos;
 
