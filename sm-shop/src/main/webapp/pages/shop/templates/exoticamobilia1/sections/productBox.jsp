@@ -13,7 +13,77 @@ response.setDateHeader ("Expires", -1);
  
 <%@page contentType="text/html"%>
 <%@page pageEncoding="UTF-8"%>
-<div class="row-exoticamobilia row">
+
+  <div class="row">
+                				<c:forEach items="${requestScope.ITEMS}" var="product">
+                    <div class="col-lg-4 col-md-6 mb-4 fit-box">
+                        <div class="card h-100">
+                           <div class="card-body">
+                           <img src="<sm:shopProductImage imageName="${product.image.imageName}"  sku="${product.sku}"/>" class="product-img1" /><br/>
+                           <br/>
+                           <h3 class="product-heading product-name" itemprop="name"><c:out value="${product.description.name}"/></h3>
+                           	<h4 class="price">
+														<h4>
+														<c:choose>
+															<c:when test="${product.discounted}">
+																<del><c:out value="${product.originalPrice}" /></del>&nbsp;<span class="specialPrice" itemprop="price"><c:out value="${product.finalPrice}" /></span>
+															</c:when>
+															<c:otherwise>
+																<span itemprop="price"><c:out value="${product.finalPrice}" /></span>
+															</c:otherwise>
+														</c:choose>
+														</h4>
+														</h4>
+                           </div>
+                            <div class="card-footer1">
+                              <button type="submit" name="addtocart" class="addtocart-button" title="Add to Cart"><img class="btn-img-checkout" src="/resources/img/btn-icon.png"/>&nbsp;ADD TO CART</button>
+                            </div>
+                        </div>
+                    </div>
+				</c:forEach>
+                </div>
+                <style>
+                .product-img1{height:210px;}
+                .hidden1{display:none;}
+.fit-box
+{
+width:280px!important;
+flex:280px!important;
+max-width:280px!important;
+height:442px!important;
+}
+.h-100
+{
+padding:19px;
+
+}
+.addtocart-button:hover {
+    color: rgb(255, 255, 255);
+    background: rgb(65, 65, 65);
+}
+.addtocart-button {
+    width: 100%;
+    height:58px;
+    background-color:#0A8452;
+    font-size: 20px;
+    line-height: 22px;
+    color: rgb(255, 255, 255);
+    text-transform: uppercase;
+    border-radius: 0px;
+    border-width: initial;
+    border-style: none;
+    border-color: initial;
+    border-image: initial;
+    padding: 9px 12px 10px;
+    transition: all 0.2s ease-in;
+}
+.btn-img-checkout{
+    margin-top: -3px;
+    margin-right: 8px;
+    margin-left: -8px;
+    }
+</style>
+<div class="row-exoticamobilia row hidden">
 										<c:forEach items="${requestScope.ITEMS}" var="product">
 											<div class="col-sm-4" data-id="${product.id}" item-price="${product.price}" item-name="${product.description.name}" item-order="${product.sortOrder}">
 												<div class="box-style-1 white-bg object-non-visible animated object-visible">

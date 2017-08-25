@@ -119,38 +119,9 @@ response.setDateHeader ("Expires", -1);
             </div>
             <!-- /.col-lg-3 -->
 
-            <div class="col-lg-9">
-              
-
-                <div class="row">
-
-                 
-
-                    <div class="col-lg-4 col-md-6 mb-4">
-                        <div class="card h-100">
-                            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-                            <div class="card-body">
-                                <h4 class="card-title"><a href="#">Item Five</a></h4>
-                                <h5>$24.99</h5>
-                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur! Lorem ipsum dolor sit amet.</p>
-                            </div>
-                            <div class="card-footer">
-                                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 mb-4">
-                        <div class="card h-100">
-                           <div class="card-body">
-                           </div>
-                            <div class="card-footer1">
-                              <button type="submit" name="addtocart" class="addtocart-button" title="Add to Cart"><img class="btn-img-checkout" src="/resources/img/btn-icon.png"/>&nbsp;ADD TO CART</button>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
+            <div class="col-lg-9">            
+          
+                <tiles:insertAttribute name="body" ignore="true"/>
                 <!-- /.row -->
 
             </div>
@@ -162,41 +133,11 @@ response.setDateHeader ("Expires", -1);
     </div>
     <!-- /.container -->
     
-    <jsp:include page="/pages/shop/templates/exoticamobilia1/sections/jsLinks.jsp" />
+<jsp:include page="/pages/shop/templates/exoticamobilia1/sections/jsLinks.jsp" />
 <tiles:insertAttribute name="footer" ignore="true"/>
 
 </body>
-<style>
-.h-100
-{
-padding:19px;
-}
-.addtocart-button:hover {
-    color: rgb(255, 255, 255);
-    background: rgb(65, 65, 65);
-}
-.addtocart-button {
-    width: 100%;
-    height:58px;
-    background-color:#0A8452;
-    font-size: 20px;
-    line-height: 22px;
-    color: rgb(255, 255, 255);
-    text-transform: uppercase;
-    border-radius: 0px;
-    border-width: initial;
-    border-style: none;
-    border-color: initial;
-    border-image: initial;
-    padding: 9px 12px 10px;
-    transition: all 0.2s ease-in;
-}
-.btn-img-checkout{
-    margin-top: -3px;
-    margin-right: 8px;
-    margin-left: -8px;
-    }
-</style>
+
 <script>
   window.onscroll = changePos;
 

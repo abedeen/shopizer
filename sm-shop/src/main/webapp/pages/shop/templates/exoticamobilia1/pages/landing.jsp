@@ -26,13 +26,13 @@ response.setDateHeader ("Expires", -1);
 										    <!-- Iterate over featuredItems -->
 											<c:set var="ITEMS" value="${requestScope.FEATURED_ITEM}" scope="request" />
 											<c:set var="FEATURED" value="true" scope="request" />
-		                         			<jsp:include page="/pages/shop/templates/exoticamobilia/sections/productBox.jsp" />
+		                         			<jsp:include page="/pages/shop/templates/exoticamobilia1/sections/productBox.jsp" />
 						</c:if>
 						<c:if test="${requestScope.SPECIALS!=null}" >
 							<h2 class="hTitle"><s:message code="label.product.specials" text="Specials" /></h2>
 											<!-- Iterate over featuredItems -->
 	                         				<c:set var="ITEMS" value="${requestScope.SPECIALS}" scope="request" />
-		                         			<jsp:include page="/pages/shop/templates/exoticamobilia/sections/productBox.jsp" />
+		                         			<jsp:include page="/pages/shop/templates/exoticamobilia1/sections/productBox.jsp" />
 						</c:if>	
 			</c:if>
 			</div>
