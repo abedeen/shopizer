@@ -22,7 +22,7 @@ response.setDateHeader ("Expires", -1);
  <c:set var="lang" scope="request" value="${requestScope.locale.language}"/> 
  
  <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="ui.bootstrap.demo" >
 <tiles:insertAttribute name="header" ignore="true"/>
 
 <body class="bg">
@@ -30,11 +30,10 @@ response.setDateHeader ("Expires", -1);
   <tiles:insertAttribute name="navbar" ignore="true"/>
 
     <!-- Page Content -->
-    <div class="container">
+    <div>
 			    <!-- START-->
-<link rel="stylesheet" href="http://localhost:8080/static/files/DEFAULT/owl.carousel.min.css">
-<link rel="stylesheet" href="http://localhost:8080/static/files/DEFAULT/owl.theme.default.min.css">
-<link rel="stylesheet" href="http://localhost:8080/static/files/DEFAULT/custom.css">
+<link rel="stylesheet" href="http://localhost:8080/resources/exoticamobilia1/js/owl.carousel.min.css">
+<link rel="stylesheet" href="http://localhost:8080/resources/exoticamobilia1/js/owl.theme.default.min.css">
 <script type="text/html" id="sliderBoxTemplate">
 {{#products}}
     <div class="carousel-item ">
@@ -44,9 +43,53 @@ response.setDateHeader ("Expires", -1);
 {{/products}}
 </script>
 
-<h2 class="hTitle">New items</h2>
-<br/>
-
+<div class="showcase-row">
+                  <div class="container">
+                    <div class="showcase">
+                        	<div class="moduletable   mod_bannersblock">				
+		<div class="module_content">
+						<div class="banner_block ">
+	<ul class="listing__banners">		
+						<li class="item banner item-1 wow fadeInLeft animated" style="width: 370px; visibility: visible; animation-name: fadeInLeft;">
+					<a href="/virtuemart_51919/index.php/catalog/asian-food/product-1-detail" target="_self" title="">
+					<div class="banner_img">
+						<img src="/resources/img/banner1.jpg">
+					</div>
+					<span class="caption"><div class="txt1"><span>Asian</span> 
+Noodles</div>
+<div class="txt2">Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempo.</div>
+<div class="txt3">Shop now!</div></span>
+					</a>
+				</li>
+						<li class="item banner item-2 wow fadeInUp animated" style="width: 370px; visibility: visible; animation-name: fadeInUp;">
+					<a href="/virtuemart_51919/index.php/catalog/asian-food/product-2-detail" target="_self" title="">
+					<div class="banner_img">
+						<img src="/resources/img/banner2.jpg">
+					</div>
+					<span class="caption"><div class="txt1"><span>Asian</span> 
+RICE</div>
+<div class="txt2">Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempo.</div>
+<div class="txt3">Shop now!</div></span>
+					</a>
+				</li>
+						<li class="item banner item-3 wow fadeInRight animated" style="width: 370px; visibility: visible; animation-name: fadeInRight;">
+					<a href="/virtuemart_51919/index.php/catalog/asian-food/product-3-detail" target="_self" title="">
+					<div class="banner_img">
+						<img src="/resources/img/banner3.jpg">
+					</div>
+					<span class="caption"><div class="txt1"><span>Miso Paste</span> 
+&amp; Soup</div>
+<div class="txt2">Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempo.</div>
+<div class="txt3">Shop now!</div></span>
+					</a>
+				</li>
+			</ul>
+</div>
+		</div>
+	</div>
+                    </div>
+                  </div>
+                </div>
 		  <script>
 	       $(document).ready(function() {
 
@@ -79,10 +122,10 @@ response.setDateHeader ("Expires", -1);
 			});
 		  }
           </script>
-		  <!--- END -->
-        <div class="row">
-
-            <div class="col-lg-9">
+		   
+        <div class="main-row">
+<div class="container">
+            <!--  div class="col-lg-9">
 
                 <div id="carouselExampleIndicators" class="carousel slide my-4" data-ride="carousel"  class="height:320px" >
                     <ol class="carousel-indicators"  class="height:320px" >
@@ -105,16 +148,26 @@ response.setDateHeader ("Expires", -1);
                         <span class="sr-only">Next</span>
                     </a>
                 </div>
-                </div>
+                </div-->
                 <div class="row">
-            <div class="col-lg-3">
+            <div class="col-lg-3 New">
 
-                <h1 class="my-4">Shop Name</h1>
+                <h3 class="module_title">Shop Name</h3>
                 <div class="list-group">
-                    <a href="#" class="list-group-item">Category 1</a>
-                    <a href="#" class="list-group-item">Category 2</a>
-                    <a href="#" class="list-group-item">Category 3<i class="fa  fa-download"></i></a>
-                </div>
+                
+				 </div>
+				  
+<div class="dropdown">
+<button onclick="myFunction()" class="dropbtn list_categories" style="width: 270px;">CATALOG</button>
+  <div id="myDropdown" class="dropdown-content">
+     <c:forEach items="${requestScope.TOP_CATEGORIES}" var="category">
+                	<c:forEach items="${category.children}" var="child">
+																						<a  class="list-group-item" style="width: 278px;" href="<c:url value="/shop/category/${child.description.friendlyUrl}.html"/><sm:breadcrumbParam categoryId="${child.id}"/><c:out value="${child.description.name}"/></a>	
+																					</c:forEach>
+								
+							</c:forEach>
+  </div>
+</div>
 
             </div>
             <!-- /.col-lg-3 -->
@@ -122,16 +175,17 @@ response.setDateHeader ("Expires", -1);
             <div class="col-lg-9">            
           
                 <tiles:insertAttribute name="body" ignore="true"/>
-                <!-- /.row -->
+              <!-- /.row -->
 
             </div>
             <!-- /.col-lg-9 -->
 
         </div>
         <!-- /.row -->
-
+  
     </div>
     <!-- /.container -->
+  </div>
     
 <jsp:include page="/pages/shop/templates/exoticamobilia1/sections/jsLinks.jsp" />
 <tiles:insertAttribute name="footer" ignore="true"/>
@@ -144,12 +198,30 @@ response.setDateHeader ("Expires", -1);
 function changePos() {
     
     
-    if (window.pageYOffset > 210) {
+    if (window.pageYOffset > 180) {
        $("#header").addClass( "fixed-top" );  
     } else {
     $("#header").removeClass( "fixed-top" );
        
     }
+}
+function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
 }
   </script>
 </html>

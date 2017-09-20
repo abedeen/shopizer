@@ -83,7 +83,7 @@ padding:19px;
     margin-left: -8px;
     }
 </style>
-<div class="row-exoticamobilia row hidden">
+<!-- div class="row-exoticamobilia row hidden">
 										<c:forEach items="${requestScope.ITEMS}" var="product">
 											<div class="col-sm-4" data-id="${product.id}" item-price="${product.price}" item-name="${product.description.name}" item-order="${product.sortOrder}">
 												<div class="box-style-1 white-bg object-non-visible animated object-visible">
@@ -101,13 +101,13 @@ padding:19px;
 												    </c:if>                                    
 													<div class="product-image"><c:if test="${product.image!=null}"><a href="<c:url value="/shop/product/" /><c:out value="${product.description.friendlyUrl}"/>.html"><img src="<sm:shopProductImage imageName="${product.image.imageName}"  sku="${product.sku}"/>" class="product-img" /></a></c:if></div>
 													
-													<!--  *** Product Name & Price Starts *** -->
+													<!--  *** Product Name & Price Starts ***  
 													<div class="caption">
 													<div class="product-details">
 													<div class="clearfix">
-														<!--<a href="<c:url value="/shop/product/" /><c:out value="${product.description.friendlyUrl}"/>.html<sm:breadcrumbParam productId="${product.id}"/>">-->
+														<!--<a href="<c:url value="/shop/product/" /><c:out value="${product.description.friendlyUrl}"/>.html<sm:breadcrumbParam productId="${product.id}"/>"> 
 														<h3 class="product-heading product-name" itemprop="name"><c:out value="${product.description.name}"/></h3>
-														<!--</a>-->
+														<!--</a> 
 														<h4 class="price">
 														<h4>
 														<c:choose>
@@ -121,8 +121,8 @@ padding:19px;
 														</h4>
 														</h4>
 													</div>
-													<!-- Product Name & Price Ends -->
-													<!-- Product Buttons Starts -->
+													<!-- Product Name & Price Ends  
+													<!-- Product Buttons Starts 
 														<div class="clearfix">
 															<a class="btn btn-default pull-left" href="<c:url value="/shop/product/" /><c:out value="${product.description.friendlyUrl}"/>.html<sm:breadcrumbParam productId="${product.id}"/>"><s:message code="button.label.view" text="Details" /></a>
 															<c:choose>
@@ -137,10 +137,10 @@ padding:19px;
 																</c:otherwise>
 															</c:choose>
 														</div>
-													<!-- Product Buttons Ends -->
+													<!-- Product Buttons Ends  
 													</div>
 													</div>
 													</div>
 										    </div>
 										</c:forEach>
-</div>  
+</div>   -->

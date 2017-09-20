@@ -43,22 +43,22 @@ response.setDateHeader ("Expires", -1);
 }
 </style>
  <!-- Navigation -->
-    <nav id="header" class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">
+    <nav id="header" class="navbar-expand-lg navbar-dark  ">
+        <a class=" " href="#">
 										<sm:pageContent contentCode="logo"/>
 									</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav ">
-                <li class="nav-item active">
-                    <a class="nav-link " style="font-size: 25px;" href="#">HOME <span class="sr-only">(current)</span></a>
+        <div class="collapse navbar-collapse heder-navigation" id="navbarResponsive">
+            <ul class="  sf-menu">
+                <li class="  active" style="padding-left: 57px;">
+                    <a class="  "  href="#">HOME <span class="sr-only">(current)</span></a>
                 </li>
                 <c:set var="code" value="${category.code}"/>
 							<c:forEach items="${requestScope.TOP_CATEGORIES}" var="category">							
 				
-                <li class="nav-item " style="font-size: 25px;">
+                <li class="  " >
 				<a class="nav-link"  data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"href="<c:url value="/shop/category/${category.description.friendlyUrl}.html"/><span class="nav-link">${category.description.name}</span></a>
 				<c:if test="${fn:length(category.children)>0}">
 													<ul class="dropdown-menu">
