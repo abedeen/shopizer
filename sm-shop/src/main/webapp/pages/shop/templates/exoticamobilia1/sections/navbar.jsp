@@ -43,17 +43,12 @@ response.setDateHeader ("Expires", -1);
 }
 </style>
  <!-- Navigation -->
-    <nav id="header" class="navbar-expand-lg navbar-dark  ">
-        <a class=" " href="#">
-										<sm:pageContent contentCode="logo"/>
-									</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+    <nav id="header" class="  navbar-expand-lg navbar-dark  ">
+       
         <div class="collapse navbar-collapse heder-navigation" id="navbarResponsive">
             <ul class="  sf-menu">
                 <li class="  active" style="padding-left: 57px;">
-                    <a class="  "  href="#">HOME <span class="sr-only">(current)</span></a>
+                    <a class="  "   href="#">HOME <span class="sr-only">(current)</span></a>
                 </li>
                 <c:set var="code" value="${category.code}"/>
 							<c:forEach items="${requestScope.TOP_CATEGORIES}" var="category">							
@@ -73,7 +68,6 @@ response.setDateHeader ("Expires", -1);
 																		</c:if>
 
 																		
-																			<h4><a href="<c:url value="/shop/category/${category.description.friendlyUrl}.html"/><sm:breadcrumbParam categoryId="${child.id}"/>"><c:out value="${category.description.name}"/></a></h4>
 																				
 																				<ul class="menu">
 																					<c:forEach items="${category.children}" var="child">

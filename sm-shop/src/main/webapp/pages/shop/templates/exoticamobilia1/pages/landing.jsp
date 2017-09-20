@@ -18,7 +18,7 @@ response.setDateHeader ("Expires", -1);
 			<sm:shopProductGroup groupName="FEATURED_ITEM"/>
 			<sm:shopProductGroup groupName="SPECIALS"/>
 			
-			<div id="" class="container">
+			<div id=""  style="width: 810px;">
 			<c:if test="${requestScope.FEATURED_ITEM!=null || requestScope.SPECIALS!=null}" >							
 						<!-- one div by section -->
 						<c:if test="${requestScope.FEATURED_ITEM!=null}" >

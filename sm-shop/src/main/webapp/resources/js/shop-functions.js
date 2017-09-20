@@ -21,7 +21,7 @@ function log(value) {
 }
 
 function loadProducts(url,divProductsContainer) {
-	$(divProductsContainer).showLoading();
+	//$(divProductsContainer).showLoading();
 
 	$.ajax({
 			type: 'POST',

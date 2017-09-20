@@ -22,50 +22,75 @@ response.setDateHeader ("Expires", -1);
  
  <script type="text/html" id="productBoxTemplate">
 {{#products}}
-<div itemscope itemtype="http://schema.org/Enumeration" class="col-md-4 productItem" item-order="{{sortOrder}}" item-name="{{description.name}}" item-price="{{price}}" data-id="{{id}}" class="col-sm-4">
-<div class="box-style-4 white-bg object-non-visible animated object-visible">
- 	{{#description.highlights}}  
-    <div class="ribbon-wrapper-green">
-   		<div class="ribbon-green">
-   			{{description.highlights}} 
-   		</div>
-   	</div>
-    {{/description.highlights}}
-	{{^canBePurchased}}
-		<div class="sold-out-box">
-	    			<span class="sold-out-text"><s:message code="label.soldout" text="Sold out" /></span>
-	  	</div> 
-	{{/canBePurchased}}
-	<div class="product-image">
-    {{#image}}                              
-	<img class="product-img" src="<c:url value=""/>{{image.imageUrl}}"><a class="overlay" href="<c:url value="/shop/product/" />{{description.friendlyUrl}}.html<sm:breadcrumbParam/>"><img class="product-img" src="<c:url value="/"/>{{image.imageUrl}}"></a>
-    {{/image}}
-    </div>
-	<!--  *** Product Name & Price Starts *** -->
-	<div class="caption">
-	<div class="product-details">
-	<div class="clearfix">
-		<h3 class="product-heading product-name" itemprop="name">{{description.name}}</h3>
-		<h4 class="price">
+ <div class="col-lg-4 col-md-6 mb-4 fit-box productItem" style="padding-left: 0px;" item-order="{{sortOrder}}" item-name="{{description.name}}" item-price="{{price}}" data-id="{{id}}" >
+                        <div class="card h-100">
+                           <div class="card-body" style="padding: 0px;">
+                           <img src="{{image.imageUrl}}" class="product-img1" /><br/>
+                           <br/>
+                           <h3 class="product-heading product-name" itemprop="name">{{description.name}}</h3>
+                           	<h4 class="price">
+														<h4>
+														<h4 class="price">
 			{{#discounted}}<del>{{originalPrice}}</del>&nbsp;<span itemprop="price" class="specialPrice">{{finalPrice}}</span>{{/discounted}}
 			{{^discounted}}<span itemprop="price" class="specialPrice">{{finalPrice}}</span>{{/discounted}}
 		</h4>
-		<!-- Product Name & Price Ends -->
-		<!-- Product Buttons Starts -->
-		<div class="clearfix">
-			<a class="btn btn-default pull-left" href="<c:url value="/shop/product/" />{{description.friendlyUrl}}.html<sm:breadcrumbParam/>" class="details"><s:message code="button.label.view" text="Details" /></a>
-		<c:if test="${requestScope.CONFIGS['allowPurchaseItems'] == true}">
-		{{#canBePurchased}}<a class="btn btn-buy pull-right addToCart" href="javascript:void(0);" class="addToCart" productId="{{id}}"><s:message code="button.label.addToCart" text="Add to cart" /></a>{{/canBePurchased}}
-		</c:if>
-		</div>
-	</div>
-	</div>
-	</div>
-</div>
-</div>
+														</h4>
+														</h4>
+                           </div>
+                            <div class="card-footer1">
+                              <!--button type="submit" name="addtocart" class="addtocart-button product-button" title="Add to Cart">Product details</button-->
+<a  class="addtocart-button product-button" href="<c:url value="/shop/product/" />{{description.friendlyUrl}}.html<sm:breadcrumbParam/>" >Product details</a>
+                            </div>
+                        </div>
+                    </div>
 {{/products}}
 </script>
+ <style>
+                .product-img1{height:210px;}
+                .hidden1{display:none;}
+.fit-box
+{
+width:280px!important;
+flex:280px!important;
+max-width:280px!important;
+height:442px!important;
+}
+.h-100
+{
+padding:19px;
 
+}
+.addtocart-button:hover {
+    color: rgb(255, 255, 255);
+    background: rgb(65, 65, 65);
+    text-decoration:none;
+}
+.addtocart-button {
+    width: 100%;
+    height:58px;
+    background-color:#0A8452;
+    font-size: 20px;
+    line-height: 22px;
+    color: rgb(255, 255, 255);
+    text-transform: uppercase;
+    border-radius: 0px;
+    border-width: initial;
+    border-style: none;
+    border-color: initial;
+    border-image: initial;
+    padding: 9px 12px 10px;
+    transition: all 0.2s ease-in;
+}
+.product-button {
+    
+    padding: 9px 9px 9px;
+}
+.btn-img-checkout{
+    margin-top: -3px;
+    margin-right: 8px;
+    margin-left: -8px;
+    }
+</style>
 
  <!-- don't change that script except max_oroducts -->
  <script>
@@ -78,7 +103,7 @@ response.setDateHeader ("Expires", -1);
  $(function(){
 	 
     //price minimum/maximum
-	$('.numeric').numeric();
+//	$('.numeric').numeric();
     
     
 	$('#filter').on('change', function() {
@@ -97,7 +122,7 @@ response.setDateHeader ("Expires", -1);
 	loadCategoryProducts();
 
  });
- 
+ </script><script>
  
  	function visualize() {
  		var orderBy = $("#filter").val();
@@ -186,12 +211,14 @@ response.setDateHeader ("Expires", -1);
 		  } else {
 			  $sortedData =  filteredData; 
 		  }
-
+		///  data.append($sortedData);
+		  
+		  $('#productsContainer').html($sortedData);
 		  // finally, call quicksand
-		  $prods.quicksand($sortedData, {
-		      duration: 800,
-		      easing: 'easeInOutQuad'
-		  });
+		  //$prods.quicksand($sortedData, {
+		   //   duration: 800,
+		    //  easing: 'easeInOutQuad'
+		  //});
 		
 		
 	}
@@ -234,7 +261,7 @@ response.setDateHeader ("Expires", -1);
 			} else {
 					$("#button_nav").hide();
 			}
-			$('#productsContainer').hideLoading();
+	//		$('#productsContainer').hideLoading();
 
 			visualize();
 			
@@ -244,8 +271,6 @@ response.setDateHeader ("Expires", -1);
 
 	}
 	
- 
- 
 
 </script>
 
@@ -253,45 +278,40 @@ response.setDateHeader ("Expires", -1);
 
 <div id="mainContent" class="container">
 			
-			  <header class="page-header row">
+			  <header class="page-header row" style="margin-top: 0px;">
 			  <c:if test="${category.description.name!=null}">
 			  <div class="fixed-image section dark-translucent-bg parallax-bg-3">
-					<div class="container">
-					<h2 class="shop-banner-title lead"><c:out value="${category.description.name}"/></h2>
+					<div class="container" style="margin-left: -15px;">
+					<h2 class="shop-banner-title lead" style="width: 810px;" ><c:out value="${category.description.name}"/></h2>
 					</div>
 			  </div>
 			  </c:if>
-			  <jsp:include page="/pages/shop/templates/exoticamobilia/sections/breadcrumb.jsp" />
-			  </header>
-
 			  
+			  </header>
 			  <c:if test="${category.description.description!=null}">
 			  <div class="row">
 			  	<p class="lead"><c:out value="${category.description.description}" escapeXml="false"/></p>
 			  </div>
 			  </c:if>
-			  
-
-
 			   <div id="shop" class="row">
                   <div class="sorting-filters">
                      <form class="form-inline">
 	                     <div class="form-group">
-	                      <label><s:message code="label.generic.sortby" text="Sort by" />:</label>
-										<select id="filter" class="form-control">
+	                      <label style="justify-content: left;"><s:message code="label.generic.sortby" text="Sort by" />:</label>
+										<select id="filter" style="height: auto;margin-top:12px;" class="form-control">
 											<option value="item-order"><s:message code="label.generic.default" text="Default" /></option>
 											<option value="item-name"><s:message code="label.generic.name" text="Name" /></option>
 											<option value="item-price"><s:message code="label.generic.price" text="Price" /></option>
 										</select>
 						 </div>
-						 <div class="form-group">
+						 <div class="form-group" style="padding-left: 120px;">
 						    <label><s:message code="label.generic.price" text="Price" /> (<s:message code="label.entity.minimum" text="Minimum"/>/<s:message code="label.entity.maximum" text="Maximum"/>):</label>
 						    <div class="row grid-space-10">
 						 		<div class="col-sm-6">
-						 		    <input id="priceFilterMinimum" name="priceFilterMinimum" class="form-control numeric filterByField" type="text">
+						 		    <input id="priceFilterMinimum" name="priceFilterMinimum" style="margin-top:12px;" class="form-control numeric filterByField" type="text">
 						 		</div>
 						 		<div class="col-sm-6">
-						 		    <input id="priceFilterMaximum" name="priceFilterMaximum" class="form-control numeric filterByField" type="text">
+						 		    <input id="priceFilterMaximum" name="priceFilterMaximum" style="margin-top:12px;" class="form-control numeric filterByField" type="text">
 						 		</div>
 						    </div>
 						 </div>
@@ -304,20 +324,16 @@ response.setDateHeader ("Expires", -1);
 						<div class="col-md-9">
 						
 							<div class="row product-list">
-							
-							
 							<!-- just copy that block for havimg products displayed -->
 							<!-- products are loaded by ajax -->
-        					<div id="productsContainer" class="list-unstyled"></div>
+        					<div id="productsContainer" class="list-unstyled" style="padding-top:20px"></div>
 			
 							<nav id="button_nav" style="text-align:center;display:none;">
 								<button id="moreProductsButton" class="btn btn-primary btn-large" style="width:400px;" onClick="loadCategoryProducts();"><s:message code="label.product.moreitems" text="Display more items" />...</button>
 							</nav>
 							<span id="end_nav" style="display:none;"><s:message code="label.product.nomoreitems" text="No more items to be displayed" /></span>
           					<!-- end block -->
-
 							</div>
-							
 							<!-- hidden -->
 							<div id="hiddenProductsContainer" style="display:none;"></div>
 
@@ -352,11 +368,7 @@ response.setDateHeader ("Expires", -1);
 					          </div>          
           					</c:if>
 
-
-
 						</sidebar>
-
-
 
 			</div>
 		</div>

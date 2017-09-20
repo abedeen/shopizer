@@ -15,11 +15,11 @@ response.setDateHeader ("Expires", -1);
 <%@page pageEncoding="UTF-8"%>
 
 
-				<div class="page-intro" style="margin-top: 0px;">
-					<div class="container">
-						<div class="row">
+				<div class="page-intro" style="background: #e3e4e4;margin-top: 0px;">
+					<div class="container" style="padding-left: 0px;">
+						<div class="row" style="margin-top:25px;margin-bottom:25px;">
 							<div class="col-md-12">
-								<ol class="breadcrumb">
+								<ol class="breadcrumb" style="width: 1104px;">
 								  <c:forEach items="${requestScope.BREADCRUMB.breadCrumbs}" var="breadcrumb" varStatus="count">
 									  <li class="active"><c:if test="${count.index==0}"><i class="fa fa-home pr-10"></i></c:if>
 									    <a href="${breadcrumb.url}<sm:breadcrumbParam/>">${breadcrumb.label}</a>

@@ -18,7 +18,7 @@ response.setDateHeader ("Expires", -1);
                 				<c:forEach items="${requestScope.ITEMS}" var="product">
                     <div class="col-lg-4 col-md-6 mb-4 fit-box">
                         <div class="card h-100">
-                           <div class="card-body">
+                           <div class="card-body" style="padding: 0px;">
                            <img src="<sm:shopProductImage imageName="${product.image.imageName}"  sku="${product.sku}"/>" class="product-img1" /><br/>
                            <br/>
                            <h3 class="product-heading product-name" itemprop="name"><c:out value="${product.description.name}"/></h3>

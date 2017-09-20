@@ -22,8 +22,8 @@
 		       <store class="org.infinispan.persistence.file.SingleFileStore" fetchPersistentState="false"
 	               ignoreModifications="false" purgeOnStartup="false" shared="false" preload="false">
 	               <properties>
-	                 <!-- <property name="location" value="./files/store"/> -->
-	                 <property name="location" value="/home/abed/shopizer/files/store"/>
+	                 <property name="location" value="./files/store"/>
+	                 <!--property name="location" value="/home/abed/shopizer/files/store"/-->
 	                 
 	               </properties>
 	          </store>
@@ -46,8 +46,8 @@
 	          <store class="org.infinispan.persistence.file.SingleFileStore" fetchPersistentState="false"
 	               ignoreModifications="false" purgeOnStartup="false" shared="false" preload="false">
 	            <properties>
-	                 <!-- <property name="location" value="./files/repos"/-->
-	                  <property name="location" value="/home/abed/shopizer/files/repos"/> 
+	                 <property name="location" value="./files/repos"/>
+	                  <!--property name="location" value="/home/abed/shopizer/files/repos"/--> 
 	               </properties>
 	          </store>
 	     </persistence>

@@ -37,8 +37,7 @@
 <script src="https://use.fontawesome.com/d05bde57d0.js"></script>
 <script
 	src="/resources/templates/exoticamobilia/js/jquery-1.11.1.min.js"></script>
-<script
-	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+
 <script src="/resources/js/hogan.js"></script>
 <script src="/resources/templates/exoticamobilia/js/bloodhound.min.js"></script>
 <script
@@ -52,8 +51,9 @@
 <script src="/resources/templates/exoticamobilia/js/modernizr.js"></script>
 <script src="/resources/templates/exoticamobilia/js/owl.carousel.min.js"></script>
 <script src="/resources/templates/exoticamobilia/js/template.js"></script>
-<script src="/resources/js/shop-functions.js"></script>
+<script src="/resources/js/shop-functions.js"></script> 
 <script src="/resources/js/shop-customer.js"></script>
+<script src="/resources/js/shop-minicart.js"></script>
 <script src="/resources/js/json2.js"></script>
 <script src="/resources/js/js.cookie.js"></script>
 <div class="header-row">
