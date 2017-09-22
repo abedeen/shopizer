@@ -19,13 +19,11 @@ response.setDateHeader ("Expires", -1);
     <!-- Footer -->
     <footer class="py-5 bg-dark">
         <div class="container">
-        <p class="m-0 text-center text-white">Abedeen Software Solutions</p>
+        <p class="m-0 text-center text-white">Perfect Software Solutions</p>
             <p class="m-0 text-center text-white">Copyright &copy; Your Website 2017</p>
         </div>
         <!-- /.container -->
     </footer>
 
     <!-- Bootstrap core JavaScript -->
-    <script src="/resources/vendor/jquery/jquery.min.js"></script>
     <script src="/resources/vendor/popper/popper.min.js"></script>
-    <script src="/resources/vendor/bootstrap/js/bootstrap.min.js"></script>

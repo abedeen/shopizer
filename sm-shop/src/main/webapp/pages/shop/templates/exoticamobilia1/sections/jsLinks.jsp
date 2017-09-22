@@ -11,32 +11,20 @@
 
     
     
-    <script src="<c:url value="/resources/templates/exoticamobilia/js/bootstrap.js" />"></script>
-    <script src="<c:url value="/resources/templates/exoticamobilia/js/iframe_api" />"></script>
-    <script src="<c:url value="/resources/templates/exoticamobilia/js/jquery.magnific-popup.min.js" />"></script>
-    <script src="<c:url value="/resources/templates/exoticamobilia/js/isotope.js" />"></script>
-    <script src="<c:url value="/resources/templates/exoticamobilia/js/jquery.event.move.js" />"></script>
-    <script src="<c:url value="/resources/templates/exoticamobilia/js/jquery.appear.js" />"></script>
-    <script src="<c:url value="/resources/templates/exoticamobilia/js/responsive-slider.min.js" />"></script>
+   
     
     
     
-    <script src="<c:url value="/resources/templates/exoticamobilia/js/modernizr.js" />"></script>
-    <script src="<c:url value="/resources/templates/exoticamobilia/js/owl.carousel.min.js" />"></script>
 
     
     
-    <script src="<c:url value="/resources/templates/exoticamobilia/js/template.js" />"></script>
-    <script src="<c:url value="/resources/templates/exoticamobilia/js/www-widgetapi.js" />"></script>
     
     
     <!-- required common scripts -->
 
-    <script src="<c:url value="/resources/js/jquery.showLoading.min.js" />"></script>
 
 
 	<!-- ////////////// -->
 
-   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
  
    

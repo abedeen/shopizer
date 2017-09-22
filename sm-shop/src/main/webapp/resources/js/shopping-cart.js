@@ -40,12 +40,11 @@
     	});
 		
 	}
-	
 	/**
 	 * Function used for adding a product to the Shopping Cart
 	 */
 	function addToCart(sku) {
-		$('#pageContainer').showLoading();
+		//$('#pageContainer').showLoading();
 		var qty = '#qty-productId-'+ sku;
 		var quantity = $(qty).val();
 		if(!quantity || quantity==null || quantity==0) {

@@ -36,12 +36,41 @@ response.setDateHeader ("Expires", -1);
 														</h4>
                            </div>
                             <div class="card-footer1">
-                              <button type="submit" name="addtocart" class="addtocart-button" title="Add to Cart"><img class="btn-img-checkout" src="/resources/img/btn-icon.png"/>&nbsp;ADD TO CART</button>
-                            </div>
+<div class="clearfix">
+															<c:choose>
+																<c:when test="${requestScope.FEATURED==true}">
+																	<c:if test="${requestScope.CONFIGS['displayAddToCartOnFeaturedItems']==true && requestScope.CONFIGS['allowPurchaseItems']==true && product.canBePurchased}"><a class="btn btn-buy pull-right addToCart" href="javascript:void(0);" productId="${product.id}"><s:message code="button.label.addToCart" text="Add to cart" /></a>
+																	</c:if>
+																</c:when>
+																<c:otherwise>
+																	<c:if test="${requestScope.CONFIGS['allowPurchaseItems']==true  && product.canBePurchased}">
+																 		<a class="btn btn-buy pull-right addToCart" href="javascript:void(0);" productId="${product.id}"><s:message code="button.label.addToCart" text="Add to cart" /></a>
+																	</c:if>
+																</c:otherwise>
+															</c:choose>
+														</div>                            </div>
                         </div>
                     </div>
 				</c:forEach>
                 </div>
+                 <script type="text/html" id="miniShoppingCartTemplate">
+		{{#shoppingCartItems}}
+			<tr id="{{productId}}" class="cart-product">
+				<td>
+			{{#image}}
+					<img width="40" src="{{contextPath}}{{image}}">
+			{{/image}}
+			{{^image}}
+					&nbsp
+			{{/image}}
+				</td>
+				<td>{{quantity}}</td>
+				<td>{{name}}</td>
+				<td>{{price}}</td>
+				<td><button productid="{{productId}}" class="close removeProductIcon" onclick="removeItemFromMinicart('{{id}}')">x</button></td>
+			</tr>
+		{{/shoppingCartItems}}
+	</script>
                 <style>
                 .product-img1{height:210px;}
                 .hidden1{display:none;}
