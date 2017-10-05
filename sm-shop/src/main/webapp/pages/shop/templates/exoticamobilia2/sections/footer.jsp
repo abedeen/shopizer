@@ -15,15 +15,20 @@ response.setDateHeader ("Expires", -1);
 <%@page contentType="text/html"%>
 <%@page pageEncoding="UTF-8"%>
 
-	
+<head>
+</head>
     <!-- Footer -->
-    <footer class="py-5 bg-dark">
-        <div class="container">
-            <p class="m-0 text-center text-white">Copyright &copy; Your Website 2017</p>
-        </div>
-        <!-- /.container -->
-    </footer>
-
+<!--div id="foot">
+<div class="main">
+<p id="back-top">
+<a href="#top"><span></span></a></p>
+<div class="space">
+<div class="wrapper">
+<div class="footerText">
+<div class="footer1">Copyright © 2017 Asian Grocery. All Rights Reserved.</div>
+<div class="footer2"><a href="https://www.joomla.org">Joomla!</a> is Free Software released under the <a href="https://www.gnu.org/licenses/gpl-2.0.html">GNU.</a></div>
+<!--{%FOOTER_LINK} -->
+</div></div></div></div></div-->
     <!-- Bootstrap core JavaScript -->
     <script src="/resources/vendor/jquery/jquery.min.js"></script>
     <script src="/resources/vendor/popper/popper.min.js"></script>
