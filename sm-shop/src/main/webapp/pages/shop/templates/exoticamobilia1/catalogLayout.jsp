@@ -31,12 +31,7 @@
 <div id="miniCartSummaryTemplate"></div>
 	<tiles:insertAttribute name="navbar" ignore="true" />
 
-	<!-- Page Content -->
-		<!-- START-->
-		<link rel="stylesheet"
-			href="http://localhost:8080/resources/exoticamobilia1/js/owl.carousel.min.css">
-		<link rel="stylesheet"
-			href="http://localhost:8080/resources/exoticamobilia1/js/owl.theme.default.min.css">
+	
 		<script type="text/html" id="sliderBoxTemplate">
 {{#products}}
     <div class="carousel-item ">
@@ -181,8 +176,9 @@
 								<c:forEach items="${requestScope.TOP_CATEGORIES}" var="category">
 									<c:forEach items="${category.children}" var="child">
 										<a class="list-group-item" style="width: 272px;"
-											href="<c:url value="/shop/category/${child.description.friendlyUrl}.html"/>?categoryId=${child.id}"><c:out value="${child.description.name}"/></a>	
-																					</c:forEach>
+											href="<c:url value="/shop/category/${child.description.friendlyUrl}.html"/>?categoryId=${child.id}"><c:out value="${child.description.name}"/>
+											</a>
+											</c:forEach>
 								
 							</c:forEach>
  
@@ -206,11 +202,9 @@
     <!-- /.container -->
   </div>
     
-<jsp:include page="/pages/shop/templates/exoticamobilia1/sections/jsLinks.jsp" />
+
 <tiles:insertAttribute name="footer" ignore="true"/>
-
-</body>
-
+ <script src="/resources/templates/bootstrap3/js/bootstrap.js"></script>
 <script>
   window.onscroll = changePos;
 
@@ -243,5 +237,8 @@ window.onclick = function(event) {
   }
 }
   </script>
+</body>
+
+
 </html>
  

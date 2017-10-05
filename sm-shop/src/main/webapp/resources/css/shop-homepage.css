@@ -22,11 +22,17 @@ a{
     background: none;
     text-decoration:none !important;
 }
+#signinPane a{
+	color:#FF6C00 !important;
+}
 
+#signinPane a:hover{
+	color:#099f61 !important;
+}
 .moduletable__top-menu ul li a {
     padding: 0;
     font-weight: 400;
-    color: #ffffff;
+    color: #ffffff !important;
 }
 a:hover, a:focus {
     text-decoration: none;
@@ -90,7 +96,7 @@ a:active, a:hover {
     -webkit-font-smoothing: antialiased;
 }
 .search-form .btn-search {
-    margin-left: 0px;
+    margin: 0px;
     font-size: 23px;
     background: #099f61;
     color: #ffffff;
@@ -506,19 +512,19 @@ sf-menu {
     line-height: 1.0;
 }
 .sf-menu>li:hover>a, .sf-menu>li.sfHover>a, .sf-menu>li.active>a, .sf-menu>li.current>a, .sf-menu>li:hover>span, .sf-menu>li.sfHover>span, .sf-menu>li.active>span, .sf-menu>li.current>span {
-    color: #099f61;
-    background: #000000;
+    color: #099f61 !important;
+    background: #000000 !important;
     background: rgba(0,0,0,0.55);
     border-bottom: 6px solid #ffffff;
     padding-bottom: 22px;
     text-decoration: none;
 }
  .sf-menu>li>a, .sf-menu>li>span {
-    background: none;
+    background: none !important;
     display: block;
     padding: 25px 40px 28px;
     font-size: 27px;
-    color: #fff;
+    color: #fff !important;
     -webkit-transition: all 0.2s ease-in;
     transition: all 0.2s ease-in;
 }
@@ -616,8 +622,14 @@ sf-menu {
     display: block;
 }
 
-.dropdown a:hover {background-color: #f1f1f1 !important}
+.dropdown-menu li > a{
+	    color: #3bc3bc !important;
+    font-size: 12px;
+}
 
+.logonbox .open{
+	padding-left:28px;
+}
 .show {display:block;}
 .list_categories{
 list-style: none;
@@ -642,6 +654,10 @@ list-style: none;
  .New {
  width:270px;
  }
+ .New > a .list-group-item :hover
+ {
+    color: #099f61 !important;
+}
  .container h2 , .main-container > .main h1 ,.main-container > .main h4 {
     margin: 0 0 25px 45px;
     font-family: 'Lato','sans-serif';
@@ -686,11 +702,12 @@ list-style: none;
 }
  
  .sf-menu ul>li>a, .sf-menu ul>li>span {
-    color: #ffffff;
+    color: #ffffff !important;
     font-size: 13px;
     line-height: 1em;
     padding: 0.5em 1em;
     display: block;
+   
 }
 
  
@@ -705,10 +722,11 @@ a:hover, a:focus {
  .sf-menu ul {
     background: #303131;
     min-width: 18em;
-    padding: 1em 0;
+    padding: 5px 0;
    // position: absolute;
-    top: -9999px;
+    //top: -9999px;
     left: 0;
+     border:none !important;
 }
 .sf-menu ul>li {
     position: relative;
@@ -735,13 +753,20 @@ a:hover, a:focus {
     border-right: 0px;
     line-height: 30px;
     width: 308px;
-    margin-top: 65px;
+    margin-top: 0px;
     z-index: 99999999;
     background-color:#E2E3E3;
 }
 #signinPane {
     padding: 15px;
     padding-bottom: 0px;
+}
+#signinPane  button{
+    background-color: #099f61;
+}
+#signinPane  button:hover{
+    background: #3c3b3b;
+    color:#fff;
 }
 .header .topinfo-block form {
     display: inline-block;
@@ -764,6 +789,9 @@ form .css, .css1{
 #login label{
 	font-weight:500;
 }
+#login label:hover{
+	color: #099f61;
+	}
 #minicartComponent {
     width: 355px;
 }
@@ -781,12 +809,21 @@ form .css, .css1{
     display: inline-block;
     cursor: pointer;
 }
+
+
 .fa-2x,#cartqty {
-    color:#ffffff;
+    color:#099f61;
+    font-size:23px;
 }
 #minicart span :hover{
    color: #ffffff; 
 }
 .lbw {
     color:#099f61;
+}
+.table>thead>tr>th, .table>tbody>tr>th, .table>tfoot>tr>th, .table>thead>tr>td, .table>tbody>tr>td, .table>tfoot>tr>td {
+    padding: 8px !important;
+    line-height: 1.42857143;
+    vertical-align: top;
+    border-top: 1px solid #ddd !important;
 }

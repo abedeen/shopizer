@@ -8,5 +8,5 @@
 <%@page pageEncoding="UTF-8"%>
 						<!-- display is ajax driven -->
   		 			    <span id="cartinfo">
-                  					<span id="cartqty">(0&nbsp;<s:message code="label.generic.item" text="item" />)</span><span id="cartprice"></span>
+                  					<span id="cartqty">0</span><span id="cartprice"></span>
             			</span>

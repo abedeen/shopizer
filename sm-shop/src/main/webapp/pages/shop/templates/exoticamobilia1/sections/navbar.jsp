@@ -42,6 +42,70 @@ response.setDateHeader ("Expires", -1);
     box-shadow: inset 0 3px 6px rgba(0,0,0,.05);
 }
 </style>
+
+<!-- TT Typeahead js files -->
+<script src="/resources/js/hogan.js"></script>
+<script src="/resources/templates/bootstrap3/js/bloodhound.min.js"></script>
+<script src="/resources/templates/bootstrap3/js/typeahead.bundle.min.js"></script>
+
+<script type="text/javascript">
+//Search code
+$(document).ready(function() { 
+
+    //post search form
+	$("#searchButton").click(function(){
+			var searchQuery = $('#searchField').val();
+			$('#hiddenQuery').val(searchQuery);
+			log('Search string : ' + searchQuery);
+	        $('#hiddenSearchForm').submit();
+   });
+
+
+	
+   var searchElements = new Bloodhound({
+		datumTokenizer: Bloodhound.tokenizers.obj.whitespace('value'),
+		queryTokenizer: Bloodhound.tokenizers.whitespace,
+		
+	    remote: {
+    		url: '/services/public/search/DEFAULT/en/autocomplete.json?q=%QUERY',
+        	filter: function (parsedResponse) {
+            	// parsedResponse is the array returned from your backend
+            	console.log(parsedResponse);
+
+            	// do whatever processing you need here
+            	return JSON.parse(parsedResponse);
+        	}
+    	}
+	});
+   
+   searchElements.initialize();
+
+
+	
+	var templ =  Hogan.compile([
+								'<p class="suggestion-text"><font color="black">{{value}}</font></p>'
+	                       ].join(''));
+
+	$('input.typeahead').typeahead({
+	    hint: true,
+	    highlight: true,
+	    minLength: 1
+	}, {
+		name: 'shopizer-search',
+	    displayKey: 'value',
+	    source: searchElements.ttAdapter(),
+	    templates: {
+	    	suggestion: function (data) { return templ.render(data); }
+	    }
+	});
+
+
+});
+
+</script>
+
+
+
  <!-- Navigation -->
     <nav id="header" class="  navbar-expand-lg navbar-dark  ">
        
@@ -71,7 +135,7 @@ response.setDateHeader ("Expires", -1);
 																				
 																				<ul class="menu">
 																					<c:forEach items="${category.children}" var="child">
-																						<li><a href="<c:url value="/shop/category/${child.description.friendlyUrl}.html"/><sm:breadcrumbParam categoryId="${child.id}"/>"><c:out value="${child.description.name}"/></a></li>		
+																						<li onmouseover="this.style.backgroundColor='#000000'" onmouseout="this.style.backgroundColor=''"><a  href="<c:url value="/shop/category/${child.description.friendlyUrl}.html"/><sm:breadcrumbParam categoryId="${child.id}"/>"><c:out value="${child.description.name}"/></a></li>		
 																					</c:forEach>
 																				</ul>
 																       
